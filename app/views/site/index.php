@@ -38,11 +38,9 @@ $this->title = $page->seo('title', $page->model->title);
 <div class="text-center">
     <h2>Последние новости</h2>
     <blockquote class="text-left">
-        <?php if ( News::last() ) { ?>
-        <?= Html::a(News::last()->title, ['news/view', 'slug' => News::last()->slug]) ?>
+        <?= (News::last()) ? Html::a(News::last()->title, ['news/view', 'slug' => News::last()->slug]) : "" ?>
         <br/>
-        <?= News::last()->short ?>
-        <?php } ?>
+        <?= (News::last()) ? News::last()->short : "" ?>
     </blockquote>
 </div>
 
@@ -56,12 +54,12 @@ $this->title = $page->seo('title', $page->model->title);
     <div class="row text-left">
         <?php $article = Article::last(1, ['category_id' => 1]); ?>
         <div class="col-md-2">
-            <?= Html::img($article->thumb(160, 120)) ?>
+            <?= ($article) ? Html::img($article->thumb(160, 120)) : "" ?>
         </div>
         <div class="col-md-10 text-left">
-            <?= Html::a($article->title, ['articles/view', 'slug' => $article->slug]) ?>
+            <?= ($article) ?  Html::a($article->title, ['articles/view', 'slug' => $article->slug]) : "" ?>
             <br/>
-            <?= $article->short ?>
+            <?= ($article) ? $article->short : ""?>
         </div>
     </div>
 </div>

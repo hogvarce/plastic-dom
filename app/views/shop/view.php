@@ -44,13 +44,7 @@ if(!empty($item->data->color) && is_array($item->data->color)) {
                 </h2>
                 <h3>Characteristics</h3>
                 <span class="text-muted">Brand:</span> <?= $item->data->brand ?>
-                <br/>
-                <span class="text-muted">Storage:</span> <?= $item->data->storage ?> GB
-                <br/>
-                <span class="text-muted">Touchscreen:</span> <?= $item->data->touchscreen ? 'Yes' : 'No' ?>
-                <br/>
-                <span class="text-muted">CPU cores:</span> <?= $item->data->cpu ?>
-                <br/>
+
                 <span class="text-muted">Availability:</span> <?= $item->available ? $item->available : 'Out of stock' ?>
                 <?php if(!empty($item->data->features)) : ?>
                     <br/>
